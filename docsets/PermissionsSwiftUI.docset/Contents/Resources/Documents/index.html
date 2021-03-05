@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>PermissionsSwiftUI  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a title="PermissionsSwiftUI  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">PermissionsSwiftUI Docs</a> (100% documented)</p>
+        <p class="header-right">
+          <form role="search" action="search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">PermissionsSwiftUI Reference</a>
+        <img id="carat" src="img/carat.png" />
+        PermissionsSwiftUI  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/PermissionStore.html">PermissionStore</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/PermissionStore/MainTexts.html">– MainTexts</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/PermissionType.html">PermissionType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/View.html">View</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/AllButtonColors.html">AllButtonColors</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/ButtonColor.html">ButtonColor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/HKAccess.html">HKAccess</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/JMPermission.html">JMPermission</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <p><span align="center">
+  <br>
+<img src="https://developer.apple.com/assets/elements/icons/swiftui/swiftui-96x96_2x.png" width="100">
+  <br>
+</span></p>
+<h1 id='permissionsswiftui-a-swiftui-package-to-handle-permissions' class='heading'>PermissionsSwiftUI: A SwiftUI package to handle permissions</h1>
+
+<p><img src="https://img.shields.io/github/workflow/status/jevonmao/PermissionsSwiftUI/Swift?label=CI%20Build"> <img src="https://img.shields.io/github/contributors/jevonmao/PermissionsSwiftUI"> <img src="https://img.shields.io/badge/License-MIT-blue.svg"> <img src="https://img.shields.io/github/issues/jevonmao/PermissionsSwiftUI?color=orange"> <img src="https://img.shields.io/github/commit-activity/w/jevonmao/PermissionsSwiftUI?color=yellowgreen&logoColor=yellowgreen"> </p>
+
+<p><code>PermissionsSwiftUI</code> displays and handles permissions in SwiftUI. It is largely inspired by <a href="https://github.com/varabeis/SPPermissions">SPPermissions</a>.
+The UI is highly customizable and resembles an <strong>Apple style</strong>. If you like the project, don&rsquo;t forget to <code>star ★</code> and follow me on GitHub. <br />
+<br />
+<img src="https://github.com/jevonmao/PermissionsSwiftUI/blob/main/Resources/screenshot_main_modal.PNG?raw=true" height="550"/>
+&emsp; &emsp;
+<img src="https://github.com/jevonmao/PermissionsSwiftUI/blob/main/Resources/screenshot_main_alert.PNG?raw=true" height="550"/> <br /></p>
+
+<p align="center"> PermissionsSwiftUI looks equally gorgeous on both ☀️light and 🌑dark mode. </p>
+<h2 id='navigation' class='heading'>Navigation</h2>
+
+<ul>
+<li><a href="#installation">Installation</a></li>
+<li><p><a href="#quickstart">Quickstart</a> 
+<details></p>
+
+<summary>Usage</summary></li>
+<li><p><a href="#usage">Usage</a></p>
+
+<ul>
+<li><a href="#customize-permission-texts">Customize Permission Texts</a></li>
+<li><a href="#customize-header-texts">Customize header texts</a></li>
+<li><a href="#onappear-and-ondisappear-override"><code>onAppear</code> and <code>onDisappear</code> Override</a></li>
+<li><a href="#auto-check-authorization">Auto Check Authorization</a></li>
+<li><a href="#auto-dismiss">Auto Dismiss</a></li>
+<li><a href="#customize-colors">Customize Colors</a></li>
+<li><a href="#restrict-dismissal">Restrict Dismissal</a></li>
+<li><a href="#configuring-health-permissions">Configuring Health Permissions</a>
+</details></li>
+</ul></li>
+<li><p><a href="#supported-permissions">Supported Permissions</a></p></li>
+<li><p><a href="#additional-information">Additional Information</a></p>
+
+<ul>
+<li><a href="#acknowledgement">Acknowledgement</a></li>
+<li><a href="#license">License</a></li>
+</ul></li>
+</ul>
+<h2 id='installation' class='heading'>Installation</h2>
+<h3 id='requirements' class='heading'>Requirements</h3>
+
+<ul>
+<li>iOS 13 or iPadOS 13</li>
+<li>Xcode 12 and Swift 5.3</li>
+<li>No tvOS, MacOS, and WatchOS support for now
+### Install
+You can install PermissionsSwiftUI into your Xcode project via Swift Package Manager. To learn more about Swift Package Manager, click <a href="https://swift.org/package-manager/">here</a></li>
+<li>In Xcode, open your project and navigate to <strong>File</strong> → <strong>Swift Packages</strong> → <strong>Add Package Dependency&hellip;</strong></li>
+<li>Paste the repository URL (<code>https://github.com/jevonmao/PermissionsSwiftUI</code>) and click <strong>Next</strong>.</li>
+<li>For <strong>Version</strong>, select <strong>Up to next major</strong>.</li>
+<li>Click <strong>Next</strong> and click <strong>Finish</strong>.</li>
+<li>You are all set, have fun using PermissionsSwiftUI!</li>
+</ul>
+<h2 id='quickstart' class='heading'>Quickstart</h2>
+
+<blockquote>
+<p>Before you start, please <code>star ★</code> this repository. Your star is my biggest motivation to pull all-nighters and maintain this open source project.</p>
+</blockquote>
+<h3 id='modal-style' class='heading'>Modal Style</h3>
+
+<p>To use PermissionsSwiftUI to show a beauitful permission modal, simply add the <code><a href="Structs/JMPermission.html">JMPermission</a></code>to any view. <br />
+<code>.JMPermissions(showModal: $showModal, for: [.locationAlways, .photo, .microphone])</code>
+Pass in a <code>Binding&lt;Bool&gt;</code> to show the modal view, and add whatever permissions you want to show.</p>
+<pre class="highlight plaintext"><code>   struct ContentView: View {
+       @State var showModal = false
+       var body: some View {
+           Button(action: {
+               showModal=true
+           }, label: {
+               Text("Ask user for permissions")
+           })
+           .JMModal(showModal: $showModal, for: [.locationAlways, .photo, .microphone])
+       }
+   }
+</code></pre>
+<h3 id='alert-style' class='heading'>Alert Style</h3>
+
+<p><img src="https://github.com/jevonmao/PermissionsSwiftUI/blob/main/Resources/alert_view_screenshot.png?raw=true" height="300" align="left" />
+The alert style is equally gorgeous, and allows for more versatile use. It is recommended when you have less than 3 permissions.  <br />
+To show a permission pop up alert, use: </p>
+<pre class="highlight plaintext"><code>.JMAlert(showModal: $showModal, for: [.locationAlways, .photo])
+</code></pre>
+
+<p>Similar to the previous <code>JMPermissions</code>, you need to pass in a <code>Binding&lt;Bool&gt;</code> to show the view, and add whatever permissions you want to show.</p>
+<h2 id='usage' class='heading'>Usage</h2>
+<h3 id='customize-permission-texts' class='heading'>Customize Permission Texts</h3>
+
+<p>😱 Be aware. Features ahead will wow you - the customization is so advanced, yet so simple. Have fun!</p>
+
+<p>To customize permission texts, use the modifier <code>setPermissionComponent()</code>
+For example, you can change title, description, and image icon:</p>
+<pre class="highlight plaintext"><code>.setPermissionComponent(for: .camera, 
+                        image: AnyView(Image(systemName: "camera.fill")), 
+                        title: "Camcorder",
+                        description: "App needs to record videos")
+</code></pre>
+
+<p>and the result:</p>
+
+<div style="text-align:center">
+<img src="https://github.com/jevonmao/PermissionsSwiftUI/blob/main/Resources/Screenshot-camera.png" height="70">
+</div>
+
+<p><br />
+Or only change 1 of title and description:</p>
+<pre class="highlight plaintext"><code>setPermissionComponent(for: .tracking, title: "Trackers")
+</code></pre>
+<pre class="highlight plaintext"><code>setPermissionComponent(for: .tracking, description: "Tracking description")
+</code></pre>
+
+<p><strong>Note:</strong> </p>
+
+<ul>
+<li>The parameters you don&rsquo;t provide will show the default text</li>
+<li>Add the <code>setPermissionComponent</code> modifier on your root level view, after <code>JMPermissions</code> modifier</li>
+</ul>
+
+<p>The <code>image</code> parameter accepts <strong>AnyView</strong>, so feel free to use <a href="https://developer.apple.com/design/human-interface-guidelines/sf-symbols/overview/">SF Symbols</a> or your custom asset:</p>
+<pre class="highlight plaintext"><code>.setPermissionComponent(for: .camera, 
+                        image: AnyView(Image("Your-cool-image"))
+</code></pre>
+
+<p>Even full SwiftUI views will work😱:</p>
+<pre class="highlight plaintext"><code>.setPermissionComponent(for: .camera, 
+                        image: AnyView(YourCoolView())
+</code></pre>
+
+<p>You can use custom text and icon for all the supported permissions, with a single line of code.</p>
+<h3 id='customize-header-texts' class='heading'>Customize Header Texts</h3>
+
+<p>To customize the header title, use the modifier <code>changeHeaderTo</code>:
+<img align="right" src="https://github.com/jevonmao/PermissionsSwiftUI/blob/main/Resources/Header%20annotation.png?raw=true" alt="Annotated for headers screen" height="400" /></p>
+<pre class="highlight plaintext"><code>.JMPermissions(showModal: $showModal, for: [.camera, .location, .calendar])
+.changeHeaderTo("App Permissions")
+</code></pre>
+
+<p>To customize the header description, use the modifier <code>changeHeaderDescriptionTo</code>:</p>
+<pre class="highlight plaintext"><code>.JMPermissions(showModal: $showModal, for: [.camera, .location, .photo])
+.changeHeaderDescriptionTo("Instagram need certain permissions in order for all the features to work.")
+</code></pre>
+
+<p>To customize the bottom description, use the modifier <code>changeBottomDescriptionTo</code>:</p>
+<pre class="highlight plaintext"><code>.JMPermissions(showModal: $showModal, for: [.camera, .location, .photo])
+.changeBottomDescriptionTo("If not allowed, you have to enable permissions in settings")
+</code></pre>
+<h3 id='code-onappear-code-and-code-ondisappear-code-override' class='heading'><code>onAppear</code> and <code>onDisappear</code> Override</h3>
+
+<p>You might find it incredibly useful to execute your code, or perform some update action when a PermissionsSwiftUI view appears and disappears. <br />
+You can perform some action when PermissionsSwiftUI view appears or disappears by:</p>
+<pre class="highlight plaintext"><code>.JMPermissions(showModal: $showModal, for: [.locationAlways, .photo, .microphone], onAppear: {}, onDisappear: {})
+</code></pre>
+
+<p>The <code>onAppear</code> and <code>onDisappear</code> <strong>closure parameters will be executed</strong> everytime PermissionsSwiftUI view <strong>appears and disappears.</strong> <br />
+The same view modifier closure for state changes are available for the <code>JMAlert</code> modifier:</p>
+<pre class="highlight plaintext"><code>.JMAlert(showModal: $showModal,
+                     for: [.locationAlways, .photo],
+                     onAppear: {print("Appeared")},
+                     onDisappear: {print("Disappeared")})
+</code></pre>
+<h3 id='auto-check-authorization' class='heading'>Auto Check Authorization</h3>
+
+<p>PermissionsSwiftUI by default will automatically check for authorization status. It will only show permissions that are currently <code>notDetermined</code> status. (iOS system prevent developers from asking denied permissions. Allowed permissions will also be ignored by PermissionsSwiftUI). If all permissions are allowed or denied, PermissionsSwiftUI will not show the modal or alert at all.
+To set auto check authorization, use the <code>autoCheckAuthorization</code> parameter:</p>
+<pre class="highlight plaintext"><code>.JMModal(showModal: $showModal, for: [.camera], autoCheckAuthorization: false)
+</code></pre>
+
+<p>same applies for JMAlert</p>
+<pre class="highlight plaintext"><code>.JMAlert(showModal: $showModal, for: [.camera], autoCheckAuthorization: false)
+</code></pre>
+<h3 id='auto-dismiss' class='heading'>Auto Dismiss</h3>
+
+<p>PermissionsSwiftUI by default will automatically dismiss the modal or alert after user allows the last permission item. However, you can override this behavior.</p>
+<pre class="highlight plaintext"><code>func JMModal(showModal: Binding&lt;Bool&gt;, for permissions: [PermissionType], autoDismiss: Bool) -&gt; some View
+</code></pre>
+
+<p>Pass in <code>true</code> or <code>false</code> to select whether to automatically dismiss the view.</p>
+<h3 id='customize-colors' class='heading'>Customize Colors</h3>
+
+<p>Using PermissionSwiftUI&rsquo;s capabilities, developers and designers can customize all the UI colors with incredible flexibility. You can fully configure all color at all states with your custom colors. <br />
+To easily change the accent color:</p>
+<pre class="highlight plaintext"><code>.setAccentColor(to: Color(.systemPurple))
+</code></pre>
+
+<p>To change the primary (default Apple blue) and tertiary (default Apple red) colors:</p>
+<pre class="highlight plaintext"><code>.setAccentColor(toPrimary: Color(.systemPurple),
+                toTertiary: Color(.systemGreen))
+</code></pre>
+
+<p><img align src="https://github.com/jevonmao/PermissionsSwiftUI/blob/main/Resources/Button_color_customize_showcase.png?raw=true" alt="Alert pop up with customized colors" height="300"></p>
+
+<blockquote>
+<p>⚠️ <code>.setAccentColor()</code> and <code>.setAllowButtonColor()</code> should never be used at the same time.</p>
+</blockquote>
+
+<p>To unleash the full customization of all button colors under all states, you need to pass in the <code><a href="Structs/AllButtonColors.html">AllButtonColors</a></code> struct:</p>
+<pre class="highlight plaintext"><code>.setAllowButtonColor(to: .init(buttonIdle: ButtonColor(foregroundColor: Color,
+                                                               backgroundColor: Color),
+                                       buttonAllowed: ButtonColor(foregroundColor: Color,
+                                                                  backgroundColor: Color),
+                                       buttonDenied: ButtonColor(foregroundColor: Color,
+                                                                 backgroundColor: Color)))
+</code></pre>
+
+<p>For more information regarding the above method, reference the <a href="https://jevonmao.github.io/PermissionsSwiftUI/Structs/AllButtonColors.html">official documentation</a>.</p>
+<h3 id='restrict-dismissal' class='heading'>Restrict Dismissal</h3>
+
+<p>PermissionsSwiftUI will by default, prevent the user from dismissing the modal and alert. This restrict dismissal behavior and be overriden by the <code>var restrictModalDismissal: Bool</code> or <code>var restrictAlertDismissal: Bool</code> properties.
+To disable the default restrict dismiss behavior:</p>
+<pre class="highlight plaintext"><code>.JMModal(showModal: $show, for permissions: [.camera], restrictDismissal: false)
+</code></pre>
+
+<p>You can also configure with the model:</p>
+<pre class="highlight plaintext"><code>let model: PermissionStore = {
+        var model = PermissionStore()
+        model.permissions = [.camera]
+        model.restrictModalDismissal = false
+        model.restrictAlertDismissal = false
+        return model
+    }
+    ......
+
+    .JMModal(showModal: $showModal, forModel: model)
+</code></pre>
+<h3 id='configuring-health-permissions' class='heading'>Configuring Health Permissions</h3>
+
+<p>Unlike all the other permissions, the configuration for health permission is a little different. Because Apple require developers to explictly set read and write types, PermissionsSwiftUI greatly simplifies the process.</p>
+<h4 id='code-hkaccess-code' class='heading'><code><a href="Structs/HKAccess.html">HKAccess</a></code></h4>
+
+<p>The structure HKAccess is required when initalizing health permission’s enum associated values. It encapsulates the read and write type permissions for the health permission.</p>
+
+<p>To set read and write health types (<code>activeEnergyBurned</code> is used as example here):</p>
+<pre class="highlight plaintext"><code>let healthTypes = Set([HKSampleType.quantityType(forIdentifier: .activeEnergyBurned)!])
+.JMModal(showModal: $show, for: [.health(categories: .init(readAndWrite: healthTypes))])
+
+//Same exact syntax for JMAlert styles
+.JMAlert(showModal: $show, for: [.health(categories: .init(readAndWrite: healthTypes))])
+
+</code></pre>
+
+<p>To set read or write individually:</p>
+<pre class="highlight plaintext"><code>let readTypes = Set([HKSampleType.quantityType(forIdentifier: .activeEnergyBurned)!])
+let writeTypes = Set([HKSampleType.quantityType(forIdentifier: .appleStandTime)!])
+.JMModal(showModal: $showModal, for: [.health(categories: .init(read: readTypes, write: writeTypes))])
+</code></pre>
+
+<p>You may also set only read or write type:</p>
+<pre class="highlight plaintext"><code>let readTypes = Set([HKSampleType.quantityType(forIdentifier: .activeEnergyBurned)!])
+.JMModal(showModal: $showModal, for: [.health(categories: .init(read: readTypes))])
+
+</code></pre>
+<h2 id='supported-permissions' class='heading'>Supported Permissions</h2>
+
+<p>Here is a list of all permissions PermissionsSwiftUI already supports support(health not in image but is supported). Yup, even the newest <code>tracking</code> permission for iOS 14 so you can stay on top of your game. All permissions in PermissionsSwiftUI come with a default name, description, and a stunning Apple native SF Symbols icon.
+<br /> <br /> <br />
+<img align="center" src="https://github.com/jevonmao/PermissionsSwiftUI/blob/main/Resources/All-permissions-card.png" alt="A card of all the permissions" width="100%"></p>
+<h2 id='additional-information' class='heading'>Additional Information</h2>
+<h3 id='acknowledgement' class='heading'>Acknowledgement</h3>
+
+<p>SPPermissions is in large a SwiftUI remake of famous Swift library <strong><a href="https://github.com/varabeis/SPPermissions">SPPermissions</a></strong> by @verabeis. SPPermissions was initially created in 2017, and today on GitHub has over 4000 stars. PermissionsSwiftUI aims to deliver a just as beautiful and powerful library in SwiftUI. If you <code>star ★</code> my project PermissionsSwiftUI, be sure to checkout the original project SPPermissions where I borrowed the UI Design, some parts of README.md page, and important source code references along the way.</p>
+<h3 id='license' class='heading'>License</h3>
+
+<p>PermissionsSwiftUI is created by Jingwen (Jevon) Mao and licensed under the <a href="https://jingwen-mao.mit-license.org">MIT License</a></p>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2021 <a class="link" href="https://jingwen-mao.mit-license.org/" target="_blank" rel="external">Jevon Mao</a>. All rights reserved. (Last updated: 2021-03-05)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
